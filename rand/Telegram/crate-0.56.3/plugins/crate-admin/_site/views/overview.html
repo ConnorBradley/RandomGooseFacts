@@ -1,0 +1,127 @@
+<div class="page-container">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="page-header">
+          <h1>{{ 'NAVIGATION.CLUSTER' | translate }} : {{ cluster.name }}</h1>
+        </div>
+      </div>
+    </div><!-- /.row -->
+
+    <div class="row">
+
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="panel {{ cluster_color_class }}">
+          <div class="panel-heading">
+            <p class="announcement-heading"><span class="{{ cluster_color_label_bar }}">{{ cluster.state }}</span></p>
+            <p class="announcement-text">{{ 'OVERVIEW.HEALTH' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="panel" ng-class="{'panel-warning': replicated_data < 100}">
+          <div class="panel-heading">
+            <p class="announcement-heading">{{replicated_data | floor:1}}%</p>
+            <p class="announcement-text">{{ 'OVERVIEW.REPLICATED_DATA' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="panel" ng-class="{'panel-danger': available_data < 100}">
+          <div class="panel-heading">
+            <p class="announcement-heading">{{available_data | floor:1}}%</p>
+            <p class="announcement-text">{{ 'OVERVIEW.AVAILABLE_DATA' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="panel">
+          <div class="panel-heading">
+            <p class="announcement-heading inline-block" data-toggle="tooltip" rel="tooltip" data-original-title="{{ records_total|number:0 }}">{{ records_total|roundWithUnit:1 }}</p>
+            <p class="announcement-text">{{ 'OVERVIEW.TOTAL_RECORDS' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="panel" ng-class="{'panel-warning': records_underreplicated > 0}">
+          <div class="panel-heading">
+            <p class="announcement-heading inline-block" data-toggle="tooltip" rel="tooltip" data-original-title="{{ records_underreplicated|number:0 }}">{{ records_underreplicated|roundWithUnit:1 }}</p>
+            <p class="announcement-text">{{ 'OVERVIEW.UNDERREPL_RECORDS' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-6">
+        <div class="panel" ng-class="{'panel-danger': records_unavailable > 0}">
+          <div class="panel-heading">
+            <p class="announcement-heading inline-block" data-toggle="tooltip" rel="tooltip" data-original-title="{{ records_unavailable|number:0 }}">{{ records_unavailable|roundWithUnit:1 }}</p>
+            <p class="announcement-text">{{ 'OVERVIEW.UNAVAIL_RECORDS' | translate }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+
+    <div class="row" ng-show="chart.data">
+        <div ng-class="checks.cluster_checks.length + checks.node_checks.length > 0 ? 'col-md-8 col-sm-12 col-xs-12' : 'col-md-12 col-sm-12 col-xs-12'">
+            <div class="page-header">
+              <h2>{{ 'OVERVIEW.CLUSTER_LOAD' | translate }}</h2>
+            </div>
+            <nvd3-line-chart data="chart.data" showxaxis="false" showyaxis="true" yaxisshowmaxmin="false" objectequality="true" forcey="[0,1]" interactive="false" showlegend="true">
+              <svg style="height: 350px"></svg>
+            </nvd3-line-chart>
+        </div>
+        <div ng-show="checks.cluster_checks.length > 0 " class="col-md-4 col-sm-12 col-xs-12">
+          <div class="panel">
+            <div class="page-header">
+              <a ng-click="refresh()" class="btn btn-xs pull-right"><i class="fa fa-refresh"></i></a>
+              <h2>{{ 'OVERVIEW.CLUSTER_CHECKS' | translate }}</h2>
+            </div>
+            <ul class="list-unstyled list-clusterchecks">
+              <li ng-repeat="check in checks.cluster_checks">
+                <div ng-switch="" on="check.severity">
+                  <div style="float:left;margin-right:10px">
+                    <span ng-switch-when="1" class="label label-info">{{ 'OVERVIEW.INFO' | translate }}</span>
+                    <span ng-switch-when="2" class="label label-warning">{{ 'OVERVIEW.WARNING' | translate }}</span>
+                    <span ng-switch-when="3" class="label label-danger">{{ 'OVERVIEW.CRITICAL' | translate }}</span>
+                  </div>
+                </div>
+                <p ng-bind-html="check.description | linky:'_blank'"></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div ng-show="checks.node_checks.length > 0 " class="col-md-4 col-sm-12 col-xs-12">
+          <div class="panel">
+            <div class="page-header">
+              <a ng-click="refresh()" class="btn btn-xs pull-right"><i class="fa fa-refresh"></i></a>
+              <h2>{{ 'OVERVIEW.NODES_CHECKS' | translate }}</h2>
+            </div>
+            <ul class="list-unstyled list-clusterchecks">
+              <li ng-repeat="check in checks.node_checks">
+                <button class="btn btn-default btn-xs pull-right" ng-click="dismissCheck(check)">{{ 'OVERVIEW.DISMISS_ALL' | translate }}</button>
+                <div ng-switch="" on="check.severity">
+                  <div style="float:left;margin-right:10px">
+                    <span ng-switch-when="1" class="label label-info">{{ 'OVERVIEW.INFO' | translate }}</span>
+                    <span ng-switch-when="2" class="label label-warning">{{ 'OVERVIEW.WARNING' | translate }}</span>
+                    <span ng-switch-when="3" class="label label-danger">{{ 'OVERVIEW.CRITICAL' | translate }}</span>
+                  </div>
+                </div>
+                <p ng-bind-html="check.description | linky:'_blank'"></p>
+                <ul class="list-unstyled">
+                  <li><b>{{ 'OVERVIEW.AFFECTED_NODES' | translate }}:</b></li>
+                  <li ng-repeat="node in check.nodes track by node.id" style="clear:both">
+                    <button class="btn btn-default btn-xs pull-right" ng-click="dismissCheckByNode(node, check)">{{ 'OVERVIEW.DISMISS' | translate }}</button>{{ node.name }}
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div><!-- /.row -->
+
+</div>

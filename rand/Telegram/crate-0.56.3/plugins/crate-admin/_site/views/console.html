@@ -1,0 +1,90 @@
+<div class="page-container">
+
+      <div class="row" console="">
+        <div class="col-lg-12">
+
+          <div class="page-header">
+            <h1>{{ 'NAVIGATION.CONSOLE' | translate }}</h1>
+          </div>
+
+          <form role="form">
+
+            <div class="">
+              <div class="pull-right">
+                <a href="" ng-click="toggleOptions()" class="btn btn-xs">{{ 'CONSOLE.OPTIONS' | translate }} <span class="fa fa-cog"></span></a>
+              </div>
+              <label>{{ 'CONSOLE.TIP' | translate }}</label>
+            </div>
+
+            <div id="console-options" class="form-group text-right">
+              <div>
+              {{ 'CONSOLE.STORE_CONSOLE' | translate }} <input type="checkbox" ng-model="useLocalStorage" ng-change="storeInLocalStorageChanged()">
+              </div>
+              <div id="show-error-trace">
+              {{ 'CONSOLE.SHOW_ERROR_TRACE' | translate }} <input type="checkbox" ng-model="showErrorTrace" ng-change="showErrorTraceChanged()">
+              </div>
+              <br><a ng-click="clearLocalStorage()" class="btn btn-xs">{{ 'CONSOLE.CLEAR_HISTORY' | translate }} <span class="fa fa-trash-o"></span></a>
+              <div ng-hide="info.hide" class="alert-success">
+                <p>{{ info.message }}</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <cli mime-type="text/x-plsql" theme="monokai"></cli>
+            </div>
+
+            <div class="form-inline">
+              <span>{{ 'CONSOLE.HINT' | translate }}</span>
+              <button ng-click="execute()" type="submit" class="btn btn-default pull-right ladda-button" data-style="expand-left" translate="">{{ 'CONSOLE.EXCUTE_QUERY' }}</button>
+            </div>
+
+          </form>
+
+        </div>
+
+
+        <div class="col-lg-12">
+          <label>{{ status }}</label>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="bs-example" ng-hide="error.hide">
+            <div>
+              <button type="button" class="close" ng-click="hide(error)">&times;</button>
+              <div class="alert alert-dismissable alert-danger">
+              <h4><span>{{ 'CONSOLE.ERROR' | translate }}</span></h4>
+              <p>{{ error.message }}</p>
+              </div>
+              <p class="hint" ng-if="!showErrorTrace"> {{ 'CONSOLE.SHOW_ERROR_TRACE_HINT' | translate }} </p>
+
+              <label class="form-inline"> {{ 'CONSOLE.ERROR_TRACE' | translate }} </label>
+              <pre><code class="cr-error-trace">{{ error.error_trace }}</code></pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div ng-show="renderTable" class="query-result-container">
+        <p></p>
+        <h2>{{ 'CONSOLE.RESULT_FROM_QUERY' | translate }}</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover tablesorter table-code">
+            <thead>
+              <tr>
+                <th ng-repeat="header in resultHeaders track by $index" class="header">{{ header }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="row in rows">
+                <td ng-repeat="column in row track by $index">
+                  <pre class="query-result" ng-if="column != null">{{ column }}</pre>
+                  <pre class="query-result" ng-if="column == null">NULL</pre>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+</div>

@@ -1,0 +1,73 @@
+[2016-11-06 11:01:38,893][INFO ][node                     ] [Punta Marguareis] version[2.3.4], pid[5932], build[${build/NA]
+[2016-11-06 11:01:38,893][INFO ][node                     ] [Punta Marguareis] initializing ...
+[2016-11-06 11:01:39,225][INFO ][io.crate.plugin          ] [Punta Marguareis] plugins loaded: [crate-sigar] 
+[2016-11-06 11:01:40,309][INFO ][plugins                  ] [Punta Marguareis] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2016-11-06 11:01:40,357][INFO ][env                      ] [Punta Marguareis] using [1] data paths, mounts [[OS (C:)]], net usable_space [75.4gb], net total_space [118.4gb], spins? [unknown], types [NTFS]
+[2016-11-06 11:01:40,358][INFO ][env                      ] [Punta Marguareis] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-11-06 11:01:40,685][INFO ][http                     ] [Punta Marguareis] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2016-11-06 11:01:40,703][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/C:/Users/Greg/Documents/Aston%20Hack/Telegram/crate-0.56.3/plugins/elasticsearch-repository-hdfs/
+[2016-11-06 11:01:40,788][INFO ][io.crate.module          ] [Punta Marguareis] configuring crate. version: 0.56.3
+[2016-11-06 11:01:41,042][INFO ][io.crate.module          ] [Punta Marguareis] configuring crate. version: 0.56.3
+[2016-11-06 11:01:44,306][INFO ][io.crate.rest            ] [Punta Marguareis] Elasticsearch HTTP REST API not enabled
+[2016-11-06 11:01:44,375][INFO ][node                     ] [Punta Marguareis] initialized
+[2016-11-06 11:01:44,375][INFO ][node                     ] [Punta Marguareis] starting ...
+[2016-11-06 11:01:44,391][WARN ][io.crate.cluster.gracefulstop.DecommissioningService] [Punta Marguareis] SIGUSR2 signal not supported on Windows 10.
+[2016-11-06 11:01:44,407][INFO ][io.crate.blob.BlobService] [Punta Marguareis] BlobService.doStart() io.crate.blob.BlobService@275902e1
+[2016-11-06 11:01:44,607][INFO ][http                     ] [Punta Marguareis] publish_address {10.79.12.64:4200}, bound_addresses {[::]:4200}
+[2016-11-06 11:01:44,761][INFO ][transport                ] [Punta Marguareis] publish_address {10.79.12.64:4300}, bound_addresses {[::]:4300}
+[2016-11-06 11:01:44,946][INFO ][discovery                ] [Punta Marguareis] crate/w-f6T4QYSgWTTXjp1qLFeA
+[2016-11-06 11:01:49,033][INFO ][cluster.service          ] [Punta Marguareis] new_master {Punta Marguareis}{w-f6T4QYSgWTTXjp1qLFeA}{10.79.12.64}{10.79.12.64:4300}{info.extended.type=sigar, http_address=10.79.12.64:4200}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-11-06 11:01:49,033][INFO ][node                     ] [Punta Marguareis] started
+[2016-11-06 11:01:49,083][INFO ][gateway                  ] [Punta Marguareis] recovered [0] indices into cluster_state
+[2016-11-06 11:02:25,187][INFO ][node                     ] [Punta Marguareis] stopping ...
+[2016-11-06 11:02:25,222][INFO ][node                     ] [Punta Marguareis] stopped
+[2016-11-06 11:02:25,222][INFO ][node                     ] [Punta Marguareis] closing ...
+[2016-11-06 11:02:25,224][INFO ][node                     ] [Punta Marguareis] closed
+[2016-11-06 11:02:37,708][INFO ][node                     ] [Güpfi] version[2.3.4], pid[7564], build[${build/NA]
+[2016-11-06 11:02:37,708][INFO ][node                     ] [Güpfi] initializing ...
+[2016-11-06 11:02:38,037][INFO ][io.crate.plugin          ] [Güpfi] plugins loaded: [crate-sigar] 
+[2016-11-06 11:02:39,014][INFO ][plugins                  ] [Güpfi] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2016-11-06 11:02:39,045][INFO ][env                      ] [Güpfi] using [1] data paths, mounts [[OS (C:)]], net usable_space [75.4gb], net total_space [118.4gb], spins? [unknown], types [NTFS]
+[2016-11-06 11:02:39,046][INFO ][env                      ] [Güpfi] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-11-06 11:02:39,376][INFO ][http                     ] [Güpfi] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2016-11-06 11:02:39,395][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/C:/Users/Greg/Documents/Aston%20Hack/Telegram/crate-0.56.3/plugins/elasticsearch-repository-hdfs/
+[2016-11-06 11:02:39,455][INFO ][io.crate.module          ] [Güpfi] configuring crate. version: 0.56.3
+[2016-11-06 11:02:39,725][INFO ][io.crate.module          ] [Güpfi] configuring crate. version: 0.56.3
+[2016-11-06 11:02:42,918][INFO ][io.crate.rest            ] [Güpfi] Elasticsearch HTTP REST API not enabled
+[2016-11-06 11:02:43,003][INFO ][node                     ] [Güpfi] initialized
+[2016-11-06 11:02:43,003][INFO ][node                     ] [Güpfi] starting ...
+[2016-11-06 11:02:43,003][WARN ][io.crate.cluster.gracefulstop.DecommissioningService] [Güpfi] SIGUSR2 signal not supported on Windows 10.
+[2016-11-06 11:02:43,003][INFO ][io.crate.blob.BlobService] [Güpfi] BlobService.doStart() io.crate.blob.BlobService@23ec63af
+[2016-11-06 11:02:43,188][INFO ][http                     ] [Güpfi] publish_address {10.79.12.64:4200}, bound_addresses {[::]:4200}
+[2016-11-06 11:02:43,335][INFO ][transport                ] [Güpfi] publish_address {10.79.12.64:4300}, bound_addresses {[::]:4300}
+[2016-11-06 11:02:43,504][INFO ][discovery                ] [Güpfi] crate/OXhoOIPRSYOa53RCkpi0wg
+[2016-11-06 11:02:47,578][INFO ][cluster.service          ] [Güpfi] new_master {Güpfi}{OXhoOIPRSYOa53RCkpi0wg}{10.79.12.64}{10.79.12.64:4300}{info.extended.type=sigar, http_address=10.79.12.64:4200}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-11-06 11:02:47,595][INFO ][node                     ] [Güpfi] started
+[2016-11-06 11:02:47,626][INFO ][gateway                  ] [Güpfi] recovered [0] indices into cluster_state
+[2016-11-06 11:24:50,484][INFO ][bootstrap                ] running graceful exit on windows
+[2016-11-06 11:27:38,793][INFO ][node                     ] [Bec d'Epicoune] version[2.3.4], pid[7704], build[${build/NA]
+[2016-11-06 11:27:38,793][INFO ][node                     ] [Bec d'Epicoune] initializing ...
+[2016-11-06 11:27:39,094][INFO ][io.crate.plugin          ] [Bec d'Epicoune] plugins loaded: [crate-sigar] 
+[2016-11-06 11:27:40,076][INFO ][plugins                  ] [Bec d'Epicoune] modules [], plugins [cloud-aws, blob, discovery-multicast, udc, crate-admin-ui, repository-hdfs, discovery-srv, admin-ui, crate, crate-core, crate-azure-discovery], sites [crate-admin-ui]
+[2016-11-06 11:27:40,110][INFO ][env                      ] [Bec d'Epicoune] using [1] data paths, mounts [[OS (C:)]], net usable_space [75.4gb], net total_space [118.4gb], spins? [unknown], types [NTFS]
+[2016-11-06 11:27:40,110][INFO ][env                      ] [Bec d'Epicoune] heap size [990.7mb], compressed ordinary object pointers [true]
+[2016-11-06 11:27:40,427][INFO ][http                     ] [Bec d'Epicoune] Using [io.crate.http.netty.CrateNettyHttpServerTransport] as http transport, overridden by [crate]
+[2016-11-06 11:27:40,444][INFO ][plugin.hadoop.hdfs       ] Loaded Hadoop [Unknown] libraries from file:/C:/Users/Greg/Documents/Aston%20Hack/Telegram/crate-0.56.3/plugins/elasticsearch-repository-hdfs/
+[2016-11-06 11:27:40,503][INFO ][io.crate.module          ] [Bec d'Epicoune] configuring crate. version: 0.56.3
+[2016-11-06 11:27:40,710][INFO ][io.crate.module          ] [Bec d'Epicoune] configuring crate. version: 0.56.3
+[2016-11-06 11:27:43,949][INFO ][io.crate.rest            ] [Bec d'Epicoune] Elasticsearch HTTP REST API not enabled
+[2016-11-06 11:27:44,049][INFO ][node                     ] [Bec d'Epicoune] initialized
+[2016-11-06 11:27:44,049][INFO ][node                     ] [Bec d'Epicoune] starting ...
+[2016-11-06 11:27:44,065][WARN ][io.crate.cluster.gracefulstop.DecommissioningService] [Bec d'Epicoune] SIGUSR2 signal not supported on Windows 10.
+[2016-11-06 11:27:44,080][INFO ][io.crate.blob.BlobService] [Bec d'Epicoune] BlobService.doStart() io.crate.blob.BlobService@23ec63af
+[2016-11-06 11:27:44,265][INFO ][http                     ] [Bec d'Epicoune] publish_address {10.79.12.64:4200}, bound_addresses {[::]:4200}
+[2016-11-06 11:27:44,381][INFO ][transport                ] [Bec d'Epicoune] publish_address {10.79.12.64:4300}, bound_addresses {[::]:4300}
+[2016-11-06 11:27:44,550][INFO ][discovery                ] [Bec d'Epicoune] crate/ypaKJTsATbW6EUZ05Q69Vw
+[2016-11-06 11:27:48,701][INFO ][cluster.service          ] [Bec d'Epicoune] new_master {Bec d'Epicoune}{ypaKJTsATbW6EUZ05Q69Vw}{10.79.12.64}{10.79.12.64:4300}{info.extended.type=sigar, http_address=10.79.12.64:4200}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-11-06 11:27:48,721][INFO ][node                     ] [Bec d'Epicoune] started
+[2016-11-06 11:27:48,770][INFO ][gateway                  ] [Bec d'Epicoune] recovered [0] indices into cluster_state
+[2016-11-06 11:30:53,737][INFO ][cluster.metadata         ] [Bec d'Epicoune] [facts] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2016-11-06 11:30:54,098][INFO ][cluster.routing.allocation] [Bec d'Epicoune] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[facts][2], [facts][0], [facts][1], [facts][3]] ...]).
+[2016-11-06 11:31:18,431][DEBUG][action.bulk              ] create new coordinator for node ypaKJTsATbW6EUZ05Q69Vw and shard [facts][1]
+[2016-11-06 11:32:57,156][INFO ][cluster.metadata         ] [Bec d'Epicoune] [users] creating index, cause [api], templates [], shards [4]/[1], mappings [default]
+[2016-11-06 11:32:57,294][INFO ][cluster.routing.allocation] [Bec d'Epicoune] Cluster health status changed from [RED] to [YELLOW] (reason: [shards started [[users][3], [users][2], [users][0], [users][1]] ...]).
